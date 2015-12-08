@@ -2,7 +2,7 @@
 Juggling with strings in PHP.
 Created by Christian Johansson 2015 <christian@cvj.se> with MIT license.
 
-Run tests by executing `Tests.php`. **All methods are not covered yet but unit-tests**.
+Run tests by executing `Tests.php`. **All methods are not covered yet by unit-tests**.
 
 ## Purpose
 The idea is the make it easier to process strings in a object-oriented way.
