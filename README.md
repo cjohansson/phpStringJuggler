@@ -22,7 +22,7 @@ Sometimes examples is the best way to learn.
 
 ### 1. Create a StringJuggler
 
-`require_once("StringJuggler.php");`
+`require_once("StringJuggler/String.php");`
 
 `$string = new \StringJuggler\String('Donec id elit non mi porta gravida at eget metus.');`
 

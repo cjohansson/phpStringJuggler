@@ -120,7 +120,7 @@ namespace StringJuggler
         /**
          * @param string $delimiter
          * @param int|null [$limit = null]
-         * @return bool|array
+         * @return bool|array                   boolean false | array of \StringJuggler\String
          */
         public function getExplode($delimiter, $limit = null)
         {
@@ -136,8 +136,7 @@ namespace StringJuggler
                 $return = array();
                 foreach ($explodes as $explode)
                 {
-                    $return[] = new \StringJuggler\String(
-                        $explode);
+                    $return[] = new \StringJuggler\String($explode);
                 }
                 if (sizeof($return) > 0) {
                     return $return;

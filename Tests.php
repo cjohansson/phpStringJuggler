@@ -295,6 +295,6 @@ namespace StringJuggler
 }
 
 namespace {
-    require_once(__DIR__ . '/StringJuggler.php');
+    require_once(__DIR__ . '/String.php');
     new \StringJuggler\Tests();
 }
