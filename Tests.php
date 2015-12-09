@@ -1,6 +1,8 @@
 <?php
 /**
- *
+ * Run in terminal: "php5 -f Tests.php"
+ * @license MIT
+ * @author Christian Johansson <christian@cvj.se>
  */
 
 /**

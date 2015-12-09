@@ -1,6 +1,7 @@
 <?php
 /**
- *
+ * @license MIT
+ * @author Christian Johansson <christian@cvj.se>
  */
 
 /**
@@ -120,7 +121,7 @@ namespace StringJuggler
         /**
          * @param string $delimiter
          * @param int|null [$limit = null]
-         * @return bool|array                   boolean false | array of \StringJuggler\String
+         * @return \StringJuggler\String|array
          */
         public function getExplode($delimiter, $limit = null)
         {
@@ -217,8 +218,8 @@ namespace StringJuggler
         public function getPregReplace($pattern, $replacement,
                                        $limit = -1, & $count = null)
         {
-            return
-                preg_replace($pattern, $replacement, $this->_string, $limit, $count);
+            return new \StringJuggler\String(
+                preg_replace($pattern, $replacement, $this->_string, $limit, $count));
         }
     
         /**
@@ -243,13 +244,17 @@ namespace StringJuggler
          * @param string $pattern
          * @param int [$flags = 0]
          * @param int [$offset = 0]
-         * @return array|bool
+         * @return array|\StringJuggler\String
          */
         public function getPregMatches($pattern, $flags = 0, $offset = 0)
         {
             $matches = array();
             if ($this->pregMatch($pattern, $matches, $flags, $offset)) {
-                return $matches;
+                $newMatches = array();
+                foreach ($matches as $match) {
+                    $newMatches[] = new \StringJuggler\String($match);
+                }
+                return $newMatches;
             }
             return new \StringJuggler\String();
         }
