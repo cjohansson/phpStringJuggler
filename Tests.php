@@ -1,6 +1,7 @@
 <?php
 /**
- * Run in terminal: "php5 -f Tests.php"
+ * Run in terminal: "php -f Tests.php"
+ *
  * @license MIT
  * @author Christian Johansson <christian@cvj.se>
  */
@@ -70,8 +71,8 @@ namespace StringJuggler
             );
 
             self::_assertTrue(
-                ($response = $string->getAfter('portas ')) == '',
-                'getAfter() test 2, $response = "' . $response . '"',
+                $string->getAfter('portas ')->isEmpty(),
+                'getAfter() test 2 is empty',
                 true
             );
 

@@ -5,22 +5,22 @@
  */
 
 /**
- * 
+ *
  */
 namespace StringJuggler
 {
 
     /**
-     * 
+     *
      */
     class String
     {
-    
+
         /**
          * @var string
          */
         private $_string = '';
-    
+
         /**
          * @param string|null $string
          */
@@ -30,7 +30,7 @@ namespace StringJuggler
                 $this->setString($string);
             }
         }
-    
+
         /**
          * @param string $string
          */
@@ -38,7 +38,7 @@ namespace StringJuggler
         {
             $this->_string = $string;
         }
-    
+
         /**
          * @return string
          */
@@ -46,7 +46,7 @@ namespace StringJuggler
         {
             return $this->_string;
         }
-    
+
         /**
          * @param string $search
          * @return bool
@@ -60,7 +60,7 @@ namespace StringJuggler
             }
             return false;
         }
-    
+
         /**
          * @param string $search
          * @return \StringJuggler\String
@@ -73,8 +73,7 @@ namespace StringJuggler
             }
             return new \StringJuggler\String();
         }
-    
-    
+
         /**
          * @param string $search
          * @return int|bool
@@ -104,7 +103,7 @@ namespace StringJuggler
         {
             return empty($this->_string);
         }
-    
+
         /**
          * @param string $search
          * @return \StringJuggler\String
@@ -117,7 +116,7 @@ namespace StringJuggler
             }
             return new \StringJuggler\String();
         }
-    
+
         /**
          * @param string $delimiter
          * @param int|null [$limit = null]
@@ -132,20 +131,20 @@ namespace StringJuggler
             }
             if (isset($explodes)
                 && is_array($explodes)
-                && sizeof($explodes) > 0
+                && count($explodes) > 0
             ) {
                 $return = array();
                 foreach ($explodes as $explode)
                 {
                     $return[] = new \StringJuggler\String($explode);
                 }
-                if (sizeof($return) > 0) {
+                if (count($return) > 0) {
                     return $return;
                 }
             }
             return new \StringJuggler\String();
         }
-    
+
         /**
          * @param string $search
          * @param string $replace
@@ -162,7 +161,7 @@ namespace StringJuggler
             }
             return false;
         }
-    
+
         /**
          * @param string $search
          * @param string $replace
@@ -179,7 +178,7 @@ namespace StringJuggler
             }
             return false;
         }
-    
+
         /**
          * @param string $search
          * @param string $replace
@@ -192,7 +191,7 @@ namespace StringJuggler
             return new \StringJuggler\String(
                 str_replace($search, $replace, $this->_string, $count));
         }
-    
+
         /**
          * @param string $pattern
          * @param string $replacement
@@ -207,13 +206,13 @@ namespace StringJuggler
                 preg_replace($pattern, $replacement, $this->_string, $limit, $count);
             return true;
         }
-    
+
         /**
          * @param string $pattern
          * @param string $replacement
          * @param int|null [$limit = -1]
          * @param int|null [$count = null]
-         * @return bool
+         * @return \StringJuggler\String
          */
         public function getPregReplace($pattern, $replacement,
                                        $limit = -1, & $count = null)
@@ -221,7 +220,7 @@ namespace StringJuggler
             return new \StringJuggler\String(
                 preg_replace($pattern, $replacement, $this->_string, $limit, $count));
         }
-    
+
         /**
          * @param string $pattern
          * @param array [$matches = array()]
@@ -239,7 +238,7 @@ namespace StringJuggler
             }
             return false;
         }
-    
+
         /**
          * @param string $pattern
          * @param int [$flags = 0]
@@ -258,7 +257,7 @@ namespace StringJuggler
             }
             return new \StringJuggler\String();
         }
-    
+
         /**
          * @param string $search
          * @param string $replace
@@ -271,7 +270,7 @@ namespace StringJuggler
             return new \StringJuggler\String(
                 str_ireplace($search, $replace, $this->_string, $count));
         }
-    
+
         /**
          * @param string $search
          * @return bool
@@ -285,7 +284,7 @@ namespace StringJuggler
             }
             return false;
         }
-    
+
         /**
          * @param string $search
          * @return int|bool
@@ -298,7 +297,7 @@ namespace StringJuggler
             }
             return false;
         }
-    
+
         /**
          * @return bool
          */
@@ -318,7 +317,7 @@ namespace StringJuggler
             }
             return new \StringJuggler\String();
         }
-    
+
         /**
          * @return string
          */
@@ -326,7 +325,7 @@ namespace StringJuggler
         {
             return $this->getString();
         }
-    
+
     }
-    
+
 }
