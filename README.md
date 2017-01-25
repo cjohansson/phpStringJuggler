@@ -11,20 +11,21 @@ An instantiated class is compatible with a string so you can use all functions f
 
 Like this:
 
-`$string = new \StringJuggler\String('DONEC');`
-
-`echo strtolower($string)` 
-
-`// Echoes 'donec'`
+``` php
+$string = new \StringJuggler\String('DONEC');`
+echo strtolower($string);
+// Echoes 'donec'
+```
 
 ## Examples
-Sometimes examples is the best way to learn. 
+Sometimes examples is the best way to learn.
 
 ### 1. Create a StringJuggler
 
-`require_once("StringJuggler/String.php");`
-
-`$string = new \StringJuggler\String('Donec id elit non mi porta gravida at eget metus.');`
+``` php
+require_once("StringJuggler/String.php");
+$string = new \StringJuggler\String('Donec id elit non mi porta gravida at eget metus.');
+```
 
 ### 2. Juggle before
 
@@ -42,11 +43,11 @@ Sometimes examples is the best way to learn.
 
 `if (($after = $string->getAfter('porta ')) == 'gravida at eget metus.') { .. do something } else { .. do something else }`
 
-If you need to verify if something was found compare with '' rather than boolean false, like this:
+If you need to verify if something was found compare with '' rather than boolean false, like this, or use the `isEmpty()` and `isNotEmpty()` methods.
 
 `if (($after = $string->getAfter('porta ')) != '') { .. do something } else { .. do something else }`
 
-Because the StringJuggler class will **always equal true but not always equal an empty string**. That behavior is caused by PHP.  
+Because the StringJuggler class will **always equal true but not always equal an empty string**. That behavior is caused by PHP.
 
 ### 5. Juggle a lot
 
