@@ -1,0 +1,34 @@
+{
+    "name": "10quality/php-string-juggler",
+    "description": "Juggling with strings in PHP.",
+    "license": "MIT",
+    "homepage": "https://github.com/10quality/php-string-juggler",
+    "keywords": [
+        "string",
+        "juggler",
+        "juggling",
+        "php"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Christian Johansson",
+            "email": "christian@cvj.se"
+        },
+        {
+            "name": "10 Quality",
+            "email": "info@10quality.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "StringJuggler\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    }
+}
