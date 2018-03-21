@@ -28,7 +28,7 @@ An instantiated class is compatible with a string so you can use all functions f
 Like this:
 
 ``` php
-$string = new tringJuggler\Juggler('DONEC');`
+$string = new StringJuggler\Juggler('DONEC');`
 echo strtolower($string);
 // Echoes 'donec'
 ```
