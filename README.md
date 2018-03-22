@@ -1,8 +1,24 @@
-# phpStringJuggler
-Juggling with strings in PHP.
-Created by Christian Johansson 2015 <christian@cvj.se> with MIT license.
+# PHP String Juggler
 
-Run tests by executing `Tests.php`. **All methods are not covered yet by unit-tests**.
+[![Latest Stable Version](https://poser.pugx.org/10quality/php-string-juggler/v/stable)](https://packagist.org/packages/10quality/php-string-juggler)
+[![Total Downloads](https://poser.pugx.org/10quality/php-string-juggler/downloads)](https://packagist.org/packages/10quality/php-string-juggler)
+[![License](https://poser.pugx.org/10quality/php-string-juggler/license)](https://packagist.org/packages/10quality/php-string-juggler)
+
+Juggling with strings in PHP.
+
+This is a forked version of [Christian Johansson](https://github.com/cjohansson)'s phpStringJuggler library.
+
+**Major changes:**
+
+* PHP 7 support.
+* Composer support.
+* PHPunit.
+
+## Install
+
+```bash
+composer require 10quality/php-string-juggler
+```
 
 ## Purpose
 The idea is the make it easier to process strings in a object-oriented way.
@@ -12,7 +28,7 @@ An instantiated class is compatible with a string so you can use all functions f
 Like this:
 
 ``` php
-$string = new \StringJuggler\String('DONEC');`
+$string = new StringJuggler\Juggler('DONEC');`
 echo strtolower($string);
 // Echoes 'donec'
 ```
@@ -23,8 +39,10 @@ Sometimes examples is the best way to learn.
 ### 1. Create a StringJuggler
 
 ``` php
-require_once("StringJuggler/String.php");
-$string = new \StringJuggler\String('Donec id elit non mi porta gravida at eget metus.');
+// Use statement
+use StringJuggler\Juggler;
+
+$string = new Juggler('Donec id elit non mi porta gravida at eget metus.');
 ```
 
 ### 2. Juggle before
@@ -106,3 +124,9 @@ if (($text = $string->getAfter('risus')->getBefore('vel eu')->getTrimmed()) == '
 * replace()
 * setString()
 * trim()
+
+## License and attribution
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Christian Johansson
